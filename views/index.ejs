@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1>Create Bookmark</h1>
+
+  <% if (typeof success_msg!== 'undefined' && success_msg.length > 0){ %>
+
+    <div class="alert alert-success">
+      <%= success_msg %>
+    </div>
+
+    <% } %>
+
+      <% if (typeof error_msg!== 'undefined' && error_msg.length > 0){ %>
+
+        <div class="alert alert-danger">
+          <%= error_msg %>
+        </div>
+
+        <% } %>
+          <form method="POST" action="/api/bookmark">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="title" name=title /><br />
+              <input type="text" name=url placeholder="url" class="form-control" /><br />
+              <input type="text" name=description placeholder="description" class="form-control" /><br />
+              <input type="submit" value="Create Bookmark" class="form-control btn btn-md btn-info" /><br />
+            </div>
+          </form>
+          <form method="GET" action="/api/bookmark">
+            <input type="submit" value="Get Bookmarks!" class="form-control btn btn-md btn-info pull-center" /><br />
+          </form>
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+          <!-- jQuery library -->
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+          <!-- Latest compiled JavaScript -->
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>
